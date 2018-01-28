@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -17,12 +19,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
-public class LoggerTest {
+public class LoggerTest2 {
+        private  final Logger logger = LoggerFactory.getLogger(LoggerTest2.class);
     @Test
-    public void test1() {
-        log.info("info...");
-        log.debug("debug....");
-        log.error("error");
-        log.warn("warn");
+    public void test2() {
+        logger.debug("debug....");
+        logger.error("error");
     }
 }
