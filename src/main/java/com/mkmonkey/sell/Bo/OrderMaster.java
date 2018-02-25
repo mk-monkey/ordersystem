@@ -12,7 +12,7 @@ import java.util.Date;
 
 /**
  * @Class Name: OrderMaster
- * @Description: TODO
+ * @Description: 订单
  * @Company bgy:  MK monkey
  * @create: 2018-01-31 22:02
  **/

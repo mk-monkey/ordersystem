@@ -6,6 +6,29 @@ spring:
     url: jdbc:mysql://192.168.31.177/sell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
+
+  #配置如果返回数据为空将不予显示在对象中
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.31.177
+    port: 6379
+
 server:
   context-path: /sell
 
+wechat:
+  myAppId: wx24d4b824d48b70b1
+  myAppSecret: 9345ec385c153f067ed26d1c394ceafb
+  myMchId: 1420707402
+  myMchKey: 75d0fbdcd4f1af824eca463d1884db99
+  myKeyPath: /var/wechat_cert/h5.p12
+  myNotifyUrl: http://wx.mkmonkey.cn/sell/pay/notify
+  openAppId: wx24d4b824d48b70b1
+  openAppSecret: 9345ec385c153f067ed26d1c394ceafb
+
+
+projectUrl:
+  wechatMpAuthorize: http://wx.mkmonkey.cn/
+  wechatOpenAuthorize: http://wx.mkmonkey.cn/
+  sell: http://wx.mkmonkey.cn/

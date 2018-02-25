@@ -8,14 +8,14 @@ import java.math.BigDecimal;
 
 /**
  * @Class Name: OrderDetail
- * @Description: TODO
+ * @Description: 订单商品 类
  * @Company bgy:  MK monkey
  * @create: 2018-01-31 22:18
  **/
 @Data
 @Entity
 public class OrderDetail {
-    //追歼 id
+    //订单 id
     @Id
     private String detailId;
     //订单 id

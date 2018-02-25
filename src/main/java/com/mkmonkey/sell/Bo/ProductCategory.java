@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  * @Class Name: ProductCategory
- * @Description: TODO
+ * @Description: 商品类目
  * @Company bgy:  MK monkey
  * @create: 2018-01-24 22:02
  **/
@@ -26,8 +26,8 @@ public class ProductCategory {
     private String categoryName;
     //类目编号
     private Integer categoryType;
-   /* //创建时间
+    //创建时间
     private Date createTime;
     //修改时间
-    private Date updateTime;*/
+    private Date updateTime;
 }

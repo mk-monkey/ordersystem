@@ -1,0 +1,43 @@
+package com.mkmonkey.sell.enums;
+
+import lombok.Getter;
+
+/**
+ * @Class Name: ResultEnum
+ * @Description: TODO
+ * @Company bgy:  MK monkey
+ * @create: 2018-02-13 13:25
+ **/
+@Getter
+public enum ResultEnum {
+    SUCCESS(0, "成功"),
+    PARAM_ERROR(1, "参数不正确"),
+    PRODEUCT_NO_EXIST(10, "商品不存在"),
+    PRODEUCT_SROCK_ERROR(11, "库存不足"),
+    ORDER_NOT_EXIST(12, "订单不存在"),
+    ORDERDETAIL_NOT_EXIST(13, "订单详情不存在"),
+    ORDER_STATUS_ERROR(14, "订单状态不正确"),
+    ORDER_UPDATE_FAIL(15, "订单更新失败"),
+    ORDER_UPDATE_EMPTY(16, "订单详情为空"),
+    ORDER_PAY_STATUS_ERROR(17, "订单支付状态不正确"),
+    CART_EMPTY(18, "购物车为空"),
+    ORDER_OWNER_ERROR(19, "该订单不属于当前用户"),
+    WECHAT_MP_ERROR(20, "微信公众号错误"),
+    WECHAT_NOTIFY_MONEY_ERROR(21, "微信异步通知金额校验不通过"),
+    ORDER_CANCEL_SUCCESS(22, "订单取消成功"),
+    PRODUCT_STATUS_ERROR(23, "商品状态不正确"),
+    PRODUCT_UP_SUCCESS(24, "商品上架成功"),
+    PRODUCT_DONW_SUCCESS(25, "商品下架成功"),
+    LOGIN_FAIL(26, " 登录失败,登录信息不正确"),
+    LOGOUT(27, " 登出成功"),;
+
+    private Integer code;
+
+    private String message;
+
+
+    ResultEnum(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+}
