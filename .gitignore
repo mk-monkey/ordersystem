@@ -20,6 +20,7 @@ target/
 *.log
 
 ### NetBeans ###
+src/test/
 nbproject/private/
 build/
 nbbuild/

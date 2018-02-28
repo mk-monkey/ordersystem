@@ -18,17 +18,17 @@ server:
   context-path: /sell
 
 wechat:
-  myAppId: wx24d4b82xxxxxxxxxxx
-  myAppSecret: 9345ec385c153f067ed2xxxxxxxxxxx
-  myMchId: 1420xxxxxxxxxxx
-  myMchKey: 75d0fbdcdxxxxxxxxxxx
+  myAppId: wx24d4b824d48b70b1
+  myAppSecret: 9345ec385c153f067ed26d1c394ceafb
+  myMchId: 1420707402
+  myMchKey: 75d0fbdcd4f1af824eca463d1884db99
   myKeyPath: /var/wechat_cert/h5.p12
-  myNotifyUrl: http://xxxxxxxxxxx/sell/pay/notify
-  openAppId: wx24d4b824dxxxxxxxxxxx
-  openAppSecret: 9345ec385cxxxxxxxxxxx
+  myNotifyUrl: http://mkmonkey/sell/pay/notify
+  openAppId: wx24d4b824d48b70b1
+  openAppSecret: 9345ec385c153f067ed26d1c394ceafb
 
 
 projectUrl:
-  wechatMpAuthorize: http://wx.xxxxxxxxxxx.cn/
-  wechatOpenAuthorize: http://wx.xxxxxxxxxxx.cn/
-  sell: http://wx.xxxxxxxxxxx.cn/
+  wechatMpAuthorize: http://wx.mkmonkey.cn/
+  wechatOpenAuthorize: http://wx.mkmonkey.cn/
+  sell: http://wx.mkmonkey.cn/

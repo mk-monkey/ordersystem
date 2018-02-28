@@ -41,7 +41,7 @@ public class SellerUserController {
     private StringRedisTemplate redisTemplate;
     @Autowired
     private ProjectUrlConfig projectUrlConfig;
-
+    //微信登录接口
     @GetMapping("/login")
     public ModelAndView login(@RequestParam("openid") String openid, Map<String, Object> map, HttpServletResponse
             response) {
@@ -59,7 +59,7 @@ public class SellerUserController {
         CookieUtil.set(response, CookieConstant.TOKEN, token, expire);
         return new ModelAndView("redirect:" + projectUrlConfig.getSell() + "/sell/seller/order/list");
     }
-
+    //用户推出接口
     @GetMapping("/logout")
     public ModelAndView logout(HttpServletResponse response, HttpServletRequest request, Map<String, Object> map) {
         //从 cookie 查询
