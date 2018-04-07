@@ -1,7 +1,6 @@
 package com.mkmonkey.sell.Vo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import lombok.Data;
 
 import java.util.List;

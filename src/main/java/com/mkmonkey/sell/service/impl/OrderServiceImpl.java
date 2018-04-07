@@ -14,8 +14,8 @@ import com.mkmonkey.sell.enums.ResultEnum;
 import com.mkmonkey.sell.excrption.SellException;
 import com.mkmonkey.sell.service.OrderService;
 import com.mkmonkey.sell.service.PayService;
-import com.mkmonkey.sell.service.ProductCategoryService;
 import com.mkmonkey.sell.service.ProductInfoService;
+import com.mkmonkey.sell.service.WebSocket;
 import com.mkmonkey.sell.utils.Keyutil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -28,9 +28,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -52,6 +50,8 @@ public class OrderServiceImpl implements OrderService {
     private OrderMasterDao orderMasterDao;
     @Autowired
     private PayService payService;
+    @Autowired
+    private WebSocket webSocket;
 
     @Override
     @Transactional
@@ -91,6 +91,8 @@ public class OrderServiceImpl implements OrderService {
                 .getProductQuantity()))
                 .collect(Collectors.toList());
         productInfoService.decreaseStock(cartDTOList);
+        //发送 websocket 消息
+        webSocket.sendMessage(orderDTO.getOrderId());
         return orderDTO;
     }
 

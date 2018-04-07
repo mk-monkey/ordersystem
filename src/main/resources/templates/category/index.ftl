@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<#include "../common/header.ftl">
 <body>
+<#include "../common/header.ftl">
 <div id="wrapper" class="toggled">
     <#include "../common/nav.ftl">
     <div id="page-content-wrapper">

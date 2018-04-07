@@ -77,7 +77,9 @@ public class SellerCategoryControllrt {
             return new ModelAndView("common/error", map);
         }
         try {
-            category = productCategoryService.findOne(categoryForm.getCategoryId());
+            if (categoryForm.getCategoryId() != null){
+                category = productCategoryService.findOne(categoryForm.getCategoryId());
+            }
             BeanUtils.copyProperties(categoryForm, category);
             productCategoryService.save(category);
         } catch (SellException e) {

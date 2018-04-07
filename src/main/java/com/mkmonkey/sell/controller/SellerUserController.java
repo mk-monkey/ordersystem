@@ -73,7 +73,7 @@ public class SellerUserController {
             CookieUtil.set(response, CookieConstant.TOKEN, null, 0);
         }
         map.put("msg", ResultEnum.LOGOUT);
-        map.put("url", projectUrlConfig.getSell() + "sell/seller/order/list");
+        map.put("url", projectUrlConfig.getSell() + "/sell/seller/order/list");
         return new ModelAndView("common/success", map);
     }
 }

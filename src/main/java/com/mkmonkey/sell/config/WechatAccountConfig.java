@@ -2,10 +2,9 @@ package com.mkmonkey.sell.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-import javax.net.ssl.SSLContext;
+import java.util.Map;
 
 /**
  * @Class Name: WechatAccountConfig
@@ -34,5 +33,9 @@ public class WechatAccountConfig {
     private String myKeyPath;
     //微信支付异步通知地址
     private String myNotifyUrl;
+    /**
+     * 微信模版id
+     */
+    private Map<String, String> templateId;
 
 }

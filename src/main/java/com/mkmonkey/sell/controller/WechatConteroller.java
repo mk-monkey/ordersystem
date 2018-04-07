@@ -40,7 +40,7 @@ public class WechatConteroller {
         //配置
         String url = projectUrlConfig.getWechatMpAuthorize() + "/sell/wechat/userInfo";
         //调用方法
-        String result = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAuth2Scope.SNSAPI_USERINFO,
+        String result = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAUTH2_SCOPE_BASE,
                 URLEncoder.encode(returnUrl));
         log.info("[微信网页授权] , result={}", result);
         return "redirect:" + result;
@@ -61,8 +61,8 @@ public class WechatConteroller {
 
     @GetMapping("/qrAuthorize")
     public String qrAuthorize(@RequestParam("returnUrl") String returnUrl) {
-        String url = projectUrlConfig.getWechatOpenAuthorize() + "/sell/wechat/qeUserInfo";
-        String result = wxOpenService.buildQrConnectUrl(url, WxConsts.QrConnectScope.SNSAPI_LOGIN, URLEncoder
+        String url = projectUrlConfig.getWechatOpenAuthorize() + "/sell/wechat/qrUserInfo";
+        String result = wxOpenService.buildQrConnectUrl(url, WxConsts.QRCONNECT_SCOPE_SNSAPI_LOGIN, URLEncoder
                 .encode(returnUrl));
         return "redirect:" + result;
     }

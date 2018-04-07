@@ -34,7 +34,7 @@ public class SellerAuthorizeAspcet {
     private StringRedisTemplate redisTemplate;
 
     @Pointcut("execution(public * com.mkmonkey.sell.controller.Seller*.*(..))" + "&&!execution(public * com.mkmonkey" +
-            ".sell.controller.SellerUserController.login(..))")
+            ".sell.controller.SellerUserController.*(..))")
     public void verify() {
 
     }
@@ -47,11 +47,11 @@ public class SellerAuthorizeAspcet {
 
         Cookie cookie = CookieUtil.get(request, CookieConstant.TOKEN);
         if (cookie == null) {
-            log.warn("登录效验] cookie 中查不到 token");
+            log.warn("[登录效验] cookie 中查不到 token");
             throw new SellerAuthorizeException();
         }
         //去 redis 里查询
-        String tokenValue = redisTemplate.opsForValue().get(String.format(RedisConstant.TOKEN_PREFIX));
+        String tokenValue = redisTemplate.opsForValue().get(String.format(RedisConstant.TOKEN_PREFIX,cookie.getValue()));
         if (StringUtils.isEmpty(tokenValue)) {
             log.warn("[登录效验] redis 中查不到 token");
             throw new SellerAuthorizeException();

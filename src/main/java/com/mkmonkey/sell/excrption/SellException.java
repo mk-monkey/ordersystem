@@ -1,6 +1,7 @@
 package com.mkmonkey.sell.excrption;
 
 import com.mkmonkey.sell.enums.ResultEnum;
+import lombok.Getter;
 
 /**
  * @Class Name: SellException
@@ -8,6 +9,7 @@ import com.mkmonkey.sell.enums.ResultEnum;
  * @Company bgy:  MK monkey
  * @create: 2018-02-13 13:28
  **/
+@Getter
 public class SellException extends RuntimeException {
     private Integer code;
 
